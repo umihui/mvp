@@ -18,6 +18,12 @@ h2 {
   float: left;
 }
 
+.waterlogo{
+  background: url('./water-drop-empty.svg') no-repeat center center;
+  width: 25px;
+  height: 25px;
+}
+
 .App-intro {
   font-size: large;
 }
