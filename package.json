@@ -1,0 +1,24 @@
+{
+  "name": "hrsf82-mvp",
+  "version": "1.0.0",
+  "description": "umi's plants helper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umihui/hrsf82-mvp.git"
+  },
+  "keywords": [
+    "react",
+    "mongoDB",
+    "express"
+  ],
+  "author": "umi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umihui/hrsf82-mvp/issues"
+  },
+  "homepage": "https://github.com/umihui/hrsf82-mvp#readme"
+}
