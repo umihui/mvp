@@ -5,6 +5,7 @@ var calculateCountDown = function(lastTime, now, interval) {
   return countDown;
 }
 
+
 var updateLastTime = function(plant) {
   var now = new Date().getTime();
   //update the database
