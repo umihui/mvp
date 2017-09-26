@@ -6,6 +6,6 @@ import AddPlant from './components/add-plant.js';
 import registerServiceWorker from './registerServiceWorker';
 import { fetchPlantList } from './util';
 
-ReactDOM.render(<App fetchPlantList={fetchPlantList}/>, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
 //ReactDOM.render(<AddPlant />, document.getElementById('root'));
 registerServiceWorker();

@@ -6,7 +6,7 @@ class PlantItem extends Component {
   constructor(props) {
     super(props);
     this.dateNow = new Date().getTime();
-    this.countDown = calculateCountDown(this.props.plant.lastTime, this.dateNow, this.props.plant.interval);
+    this.countDown = calculateCountDown(this.props.plant.lastWatering, this.dateNow, this.props.plant.interval);
   }
 
   render() {

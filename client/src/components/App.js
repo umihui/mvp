@@ -16,7 +16,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchPlantList((data) => this.setState({
+    fetchPlantList((data) => this.setState({
+      plantData: data
+    }));
+  }
+
+  renderList(e) {
+    console.log('RERENDER');
+    fetchPlantList((data) => this.setState({
       plantData: data
     }));
   }
@@ -31,7 +38,7 @@ class App extends Component {
         <div className="list">
           <PlantList list={this.state.plantData} />
         </div>
-        <AddPlant />
+        <AddPlant reRender={this.renderList.bind(this)}/>
       </div>
     );
   }

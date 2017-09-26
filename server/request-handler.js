@@ -7,7 +7,6 @@ exports.fetchList = function(req, res) {
     if (err) {
       res.send(500, err);
     } else {
-      console.log(list);
       res.status(200).send(list);
     }
   });

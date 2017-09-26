@@ -11,7 +11,7 @@ class AddPlant extends Component {
         <form className="add" onSubmit={
           (e) => {
             e.preventDefault();
-            addNewPlant({name: $('.plantname').val(),interval: $('.interval').val()});
+            addNewPlant({name: $('.plantname').val(),interval: $('.interval').val()},this.props.reRender);
             $('.plantname').val('');
             $('.interval').val('');
           }

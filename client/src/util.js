@@ -6,9 +6,9 @@ var calculateCountDown = function(lastTime, now, interval) {
   return countDown;
 }
 
-var addNewPlant = function(message) {
+var addNewPlant = function(message,callback) {
   axios.post('http://127.0.0.1:3001/add', message)
-    .then((result) => alert('success'))
+    .then((result) => {alert('success');callback(result);})
     .catch((err) => console.error('Failed add',err));
 }
 
