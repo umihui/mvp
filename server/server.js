@@ -4,7 +4,8 @@ var handler = require('./request-handler.js');
 var path = require('path');
 var cors = require('cors');
 var bodyParser = require('body-parser');
-
+var fs = require('fs');
+var multer = require('multer');
 var app = express();
 
 var corsOptions = {
@@ -13,6 +14,7 @@ var corsOptions = {
   "preflightContinue": false,
   "optionsSuccessStatus": 204
 };
+var upload = multer({ dest: 'uploads/' });
 
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -21,9 +23,9 @@ app.use(express.static(path.join(__dirname,'client', 'index.html')))
 // app.use(express.static(__dirname,'client));
 
 app.get('/', handler.fetchList);
+
 app.post('/add', handler.insertNewPlant);
 app.post('/water', handler.updateWaterTime);
-
 
 
 module.exports = app;
