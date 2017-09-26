@@ -1,21 +1,33 @@
 import React, { Component } from 'react';
+import {addNewPlant} from '../util.js';
+import * as $ from 'jquery'
 
 class AddPlant extends Component {
   render() {
     return (
       <div>
-        <div>
-          <h2>New Plant</h2>
-        </div>
-        <form>
-          Name: <input type="text" name="fname" /><br></br>
-          Interval:  <input type="text" name="lname" /><span>days</span><br></br>
-          <input type="submit" value="Submit" />
+
+        <p>add new plant</p>
+        <form className="add" onSubmit={
+          (e) => {
+            e.preventDefault();
+            addNewPlant({name: $('.plantname').val(),interval: $('.interval').val()});
+            $('.plantname').val('');
+            $('.interval').val('');
+          }
+        }>
+          Name: <input type="text" className="plantname" /><br></br>
+          Interval:  <input type="text" className="interval" /><span>days</span><br></br>
+          <input
+            type="submit"
+            value="Submit"
+          />
         </form>
-    </div>
+
+      </div>
     );
   }
 
 }
 
-export default AddPlant;
+export {AddPlant};

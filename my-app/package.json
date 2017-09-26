@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "express": "^4.15.5",
+    "jquery": "^3.2.1",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.13",
     "react": "^15.6.1",

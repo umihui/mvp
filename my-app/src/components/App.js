@@ -3,6 +3,7 @@ import logo from '../images/plant-log.svg';
 import './App.css';
 import PlantList from './List-component.js';
 import { exampleData } from './exampleData'
+import {AddPlant} from './add-plant.js';
 
 
 class App extends Component {
@@ -12,6 +13,9 @@ class App extends Component {
       plantData: exampleData
     }
   }
+
+
+
   render() {
     console.log('APP',this.state.plantData);
     return (
@@ -23,6 +27,7 @@ class App extends Component {
         <div className="list">
           <PlantList list={this.state.plantData} />
         </div>
+        <AddPlant />
       </div>
     );
   }
