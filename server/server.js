@@ -7,23 +7,22 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-const corsOptions = {
-  origin: true,
-  credentials: true,
+var corsOptions = {
+  "origin": "*",
+  "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  "preflightContinue": false,
+  "optionsSuccessStatus": 204
 };
 
-app.options('*', cors(corsOptions));
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
+app.use(express.static(path.join(__dirname,'client', 'index.html')))
 // app.use(express.static(__dirname,'client));
 
 
 app.post('/add', handler.insertNewPlant);
-app.post('/water', (req, res) => {
-  console.log('GET +++');
-});
+app.post('/water', handler.updateLastWatering);
 
 
 

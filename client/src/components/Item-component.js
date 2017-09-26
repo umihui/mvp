@@ -17,7 +17,7 @@ class PlantItem extends Component {
           <span className="count-down">{this.countDown}</span>
        </div>
        <div className="action-button">
-         <button className="waterlogo" onClick={() => waterPlant(this.props.plant.name)}>
+         <button className="waterlogo" onClick={() => waterPlant({name:this.props.plant.name})}>
          </button>
        </div>
      </div>
