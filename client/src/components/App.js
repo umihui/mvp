@@ -33,12 +33,14 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Plants List</h2>
+          <h2>Plants Butler</h2>
         </div>
         <div className="list">
           <PlantList list={this.state.plantData} />
         </div>
+
         <AddPlant reRender={this.renderList.bind(this)}/>
+
       </div>
     );
   }

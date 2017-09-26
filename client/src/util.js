@@ -28,4 +28,18 @@ var fetchPlantList = function(callback){
     .catch((err) => console.error('fail fetch',err));
 }
 
-export { calculateCountDown, addNewPlant, waterPlant, fetchPlantList };
+var uploadFile = function (event) {
+   console.log('Fire Upload');
+    var file = event.target.files[0];
+
+
+    axios.post('http://127.0.0.1:3001/upload', file, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then((result) => console.log('upload!'))
+    .catch((err) => console.error('fail upload',err));
+}
+
+export { calculateCountDown, addNewPlant, waterPlant, fetchPlantList, uploadFile };

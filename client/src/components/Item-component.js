@@ -13,13 +13,15 @@ class PlantItem extends Component {
     return (
       <div>
         <div className="plant-item">
-          {this.props.plant.name}
-          <span className="count-down">{this.countDown}</span>
+          <h3>{this.props.plant.name}</h3>
+          <br></br>
+          <span className="count-down">{this.countDown} days left</span>
+          <br></br>
+            <button className="waterlogo" onClick={() => waterPlant({name:this.props.plant.name})}>
+            </button>
+
        </div>
-       <div className="action-button">
-         <button className="waterlogo" onClick={() => waterPlant({name:this.props.plant.name})}>
-         </button>
-       </div>
+
      </div>
    );
   }

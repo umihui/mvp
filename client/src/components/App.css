@@ -1,3 +1,22 @@
+.plant-item {
+    float: right;
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    border: 3px solid #73AD21;
+}
+.plant-item button {
+  position: relative;
+  bottom: 0px;
+  left: 0px;
+}
+.add-plant {
+  float: left;
+  width: 200px;
+  height: 100px;
+  margin: 10px;
+}
+
 .App {
   text-align: center;
 }
