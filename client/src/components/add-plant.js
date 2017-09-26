@@ -23,6 +23,10 @@ class AddPlant extends Component {
             value="Submit"
           />
         </form>
+        <form method="post" encType="multipart/form-data" action="/upload">
+          <input type="file" name="file" />
+          <input type="submit" value="Submit" />
+        </form>
 
       </div>
     );
