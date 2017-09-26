@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import emptylogo from './water-drop-empty.svg';
-import { calculateCountDown } from './util.js';
+import emptylogo from '../images/water-drop-empty.svg';
+import { calculateCountDown } from '../util.js';
 
 class PlantItem extends Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class PlantItem extends Component {
   }
 
   render() {
-    console.log(this.countDown);
     return (
       <div>
         <div className="plant-item">

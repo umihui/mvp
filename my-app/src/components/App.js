@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './plant-log.svg';
+import logo from '../images/plant-log.svg';
 import './App.css';
 import PlantList from './List-component.js';
 import { exampleData } from './exampleData'
