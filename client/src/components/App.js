@@ -3,21 +3,25 @@ import logo from '../images/plant-log.svg';
 import './App.css';
 import PlantList from './List-component.js';
 import { exampleData } from './exampleData'
-import {AddPlant} from './add-plant.js';
+import { AddPlant } from './add-plant.js';
+import { fetchPlantList } from '../util';
 
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       plantData: exampleData
     }
   }
 
-
+  componentDidMount() {
+    this.props.fetchPlantList((data) => this.setState({
+      plantData: data
+    }));
+  }
 
   render() {
-    console.log('APP',this.state.plantData);
     return (
       <div className="App">
         <div className="App-header">

@@ -18,5 +18,14 @@ var waterPlant = function(name){
     .catch((err) => console.error('fail water',err));
 }
 
+var fetchPlantList = function(callback){
+  console.log('Fetch');
+  axios.get('http://127.0.0.1:3001/')
+    .then((result) => {
+      console.log('fetch',result);
+      callback(result.data);
+    })
+    .catch((err) => console.error('fail fetch',err));
+}
 
-export { calculateCountDown, addNewPlant, waterPlant };
+export { calculateCountDown, addNewPlant, waterPlant, fetchPlantList };

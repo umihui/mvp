@@ -1,6 +1,18 @@
 var db = require('../db/db');
 var Plant = require('../db/plant');
 
+exports.fetchList = function(req, res) {
+  console.log('START FETCH');
+  Plant.find({}).exec(function(err, list) {
+    if (err) {
+      res.send(500, err);
+    } else {
+      console.log(list);
+      res.status(200).send(list);
+    }
+  });
+};
+
 exports.insertNewPlant = function(req, res) {
   var name = req.body.name;
   //console.log('INASWR+++++++',name);
@@ -26,7 +38,7 @@ exports.insertNewPlant = function(req, res) {
     });
 }
 
-exports.updateLastWatering = function(req, res) {
+exports.updateWaterTime = function(req, res) {
   var name = req.body.name;
   console.log('waterRequest',name);
   //Tank.update({ _id: id }, { $set: { size: 'large' }}, callback);

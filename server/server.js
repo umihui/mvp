@@ -20,9 +20,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname,'client', 'index.html')))
 // app.use(express.static(__dirname,'client));
 
-
+app.get('/', handler.fetchList);
 app.post('/add', handler.insertNewPlant);
-app.post('/water', handler.updateLastWatering);
+app.post('/water', handler.updateWaterTime);
 
 
 
