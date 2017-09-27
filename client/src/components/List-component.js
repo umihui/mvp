@@ -5,7 +5,7 @@ var PlantList = (props) => (
   <div className="plant-list">
     {props.list.map((plant,i) =>
       <div key={(i).toString()}>
-        <PlantItem plant={plant} />
+        <PlantItem plant={plant} reRender={props.reRender}/>
       </div>
     )}
   </div>

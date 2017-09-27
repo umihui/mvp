@@ -12,7 +12,8 @@ class App extends Component {
     super(props);
     this.state = {
       plantData: []
-    }
+    };
+    this.renderList = this.renderList.bind(this);
   }
 
   componentDidMount() {
@@ -21,14 +22,20 @@ class App extends Component {
     }));
   }
 
-  renderList(e) {
-    console.log('RERENDER');
-    fetchPlantList((data) => this.setState({
-      plantData: data
-    }));
+  renderList() {
+    console.log('RERENDER',this.state);
+
+    fetchPlantList((data) => {
+      //console.log(this.state);
+      this.setState({
+        plantData: data
+      })
+    });
   }
 
   render() {
+    console.log('rendering');
+    console.log(this.state.plantData);
     return (
       <div className="App">
         <div className="App-header">
@@ -36,10 +43,10 @@ class App extends Component {
           <h2>Plants Butler</h2>
         </div>
         <div className="list">
-          <PlantList list={this.state.plantData} />
+          <PlantList list={this.state.plantData} reRender={this.renderList} />
         </div>
 
-        <AddPlant reRender={this.renderList.bind(this)}/>
+        <AddPlant reRender={this.renderList}/>
 
       </div>
     );

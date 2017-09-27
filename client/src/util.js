@@ -8,13 +8,13 @@ var calculateCountDown = function(lastTime, now, interval) {
 
 var addNewPlant = function(message,callback) {
   axios.post('http://127.0.0.1:3001/add', message)
-    .then((result) => {alert('success');callback(result);})
+    .then((result) => {alert('success');callback();})
     .catch((err) => console.error('Failed add',err));
 }
 
-var waterPlant = function(name){
+var waterPlant = function(name, callback){
   axios.post('http://127.0.0.1:3001/water', name)
-    .then((result) => console.log('water!'))
+    .then((result) => {alert('watered!');callback();})
     .catch((err) => console.error('fail water',err));
 }
 
